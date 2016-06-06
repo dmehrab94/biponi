@@ -7,8 +7,13 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.db import models
 from django.utils import timezone
 
+class Product(models.Model):
+	product_name=models.CharField(max_length=100)
+	#give other product fields here
 
 class Question(models.Model):
+	#product=models.ForeignKey(Product,on_delete=models.CASCADE) eirokom kichu ekta lagbe import koraite hobe
+	#question_title=models.CharField(max_length=50)
 	question_text=models.CharField(max_length=200)
 	pub_date=models.DateTimeField('date published')
 	def __str__(self):
